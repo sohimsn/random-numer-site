@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Roll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Dice Roll</h1>
+
+<button onclick="rollDice()">Roll</button>
+
+<h2 id="dice">🎲 -</h2>
+
+<script>
+function rollDice(){
+  document.getElementById("dice").innerText =
+    "🎲 " + (Math.floor(Math.random() * 6) + 1);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+  <loc>https://rnglab.vercel.app/</loc>
+</url>
+
+<url>
+  <loc>https://rnglab.vercel.app/random-number.html</loc>
+</url>
+
+<url>
+  <loc>https://rnglab.vercel.app/dice-roll.html</loc>
+</url>
+
+<url>
+  <loc>https://rnglab.vercel.app/coin-flip.html</loc>
+</url>
+
+</urlset>
