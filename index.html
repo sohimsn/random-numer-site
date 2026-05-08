@@ -1,35 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Random Number Generator</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        font-family: Arial, sans-serif;
+        color: white;
+    }
 
-  <!-- 📱 ВАЖНО ДЛЯ ТЕЛЕФОНА -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    .card {
+        background: rgba(255,255,255,0.05);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        width: 300px;
+    }
 
-  <title>RNG Lab | Random Tools</title>
-  <meta name="description" content="Free random number generator and tools online.">
+    h1 {
+        margin-bottom: 20px;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    input {
+        width: 80px;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        margin: 5px;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        background: #3b82f6;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #2563eb;
+        transform: scale(1.05);
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 32px;
+        font-weight: bold;
+    }
+</style>
 </head>
 
 <body>
 
-<header class="container">
-  <h1>RNG Lab</h1>
-  <p>Free random tools for numbers, dice and decisions</p>
-</header>
+<div class="card">
+    <h1>Random Number</h1>
 
-<nav class="container nav">
-  <a href="random-number.html">Random Number</a>
-</nav>
+    <div>
+        <input id="min" placeholder="Min" type="number">
+        <input id="max" placeholder="Max" type="number">
+    </div>
 
-<section class="container card">
-  <h2>What is RNG Lab?</h2>
-  <p>
-    Free online random generator for games, coding and decisions.
-    Fast, simple and works on any device.
-  </p>
-</section>
+    <button onclick="generate()">Generate</button>
+
+    <div class="result" id="result">-</div>
+</div>
+
+<script>
+function generate() {
+    let min = parseInt(document.getElementById("min").value);
+    let max = parseInt(document.getElementById("max").value);
+
+    if (isNaN(min) || isNaN(max)) {
+        document.getElementById("result").innerText = "Enter numbers";
+        return;
+    }
+
+    let num = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    document.getElementById("result").innerText = num;
+}
+</script>
 
 </body>
 </html>
